@@ -88,6 +88,44 @@
             </div>
         </div>
 
+
+        <% @contributions.each do |contribution| %>
+        <div class="ui cards">
+                <!-- メモの表示関連はここに記述 -->
+                <!-- 下記のcardクラスのdivタグで囲まれた範囲が一つのカードに相当する -->
+                <div class="card">
+                    <div class="content">
+                        <div class="header">
+                            <!-- メモのタイトルはここに -->
+                            <p><%= @contribution.title %></p>
+                        </div>
+                        <div class="meta">
+                            <!-- メモのカテゴリはここに -->
+                            カテゴリ名1
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="description">
+                            <!-- メモの内容はここに -->
+                            <p><%= @contribution.body %></p>
+                        </div>
+                    </div>
+                    <div class="extra content">
+                        <div class="ui two buttons">
+                            <!-- メモの編集・削除に関しては下記を編集 -->
+                            <a class="ui basic blue button" href="">Edit</a>
+                            <a class="ui basic red button" href="">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% end %>
+
+
+
+        
+
         <script>
 (function(window, document) {
     document.getElementById('toggle').addEventListener('click', function(e) {

@@ -5,16 +5,15 @@ require 'sinatra/activerecord'
 require './models'
 
 get '/' do
-    @contents = Contribution.order('id desc').all
+    @contributions = Contribution.all
     erb :index
 end
 
 # メモを新しく作成するときの処理
-get '/new' do
+post '/new' do
     Contribution.create({
         title: params[:title],
-        body: params[:body],
-        category: params[:category]
+        body: params[:body]
     })
     redirect '/'
 end

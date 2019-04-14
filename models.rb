@@ -1,5 +1,13 @@
 ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || "sqlite3:db/development.db")
 
+class Contribution < ActiveRecord::Base
+
+end
+
+class Category < ActiveRecord::Base
+
+end
+
 ##############################################
 # モデルの作成例
 # class Model < ActiveRecord::Base
